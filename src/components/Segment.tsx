@@ -7,15 +7,16 @@ type SegmentType = {
     size: number;
     id: string;
     skew: boolean;
+    gray: number;
 };
 
-const Segment = ({ active, color, size, id, skew }: SegmentType) => {
+const Segment = ({ active, color, size, id, skew, gray }: SegmentType) => {
     const ss = skew ? skewedSegmentStyle[id] : segmentStyle[id];
 
     const outerStyle = {
-        filter: active
-            ? `drop-shadow(0px 0px ${size * 0.3}px ${color})`
-            : "none",
+        // filter: active
+        //     ? `drop-shadow(0px 0px ${size * 0.3}px ${color})`
+        //     : "none",
         padding: size * 0.3,
         width: "fit-content",
         position: ss.id ? "absolute" : "relative",
@@ -29,7 +30,7 @@ const Segment = ({ active, color, size, id, skew }: SegmentType) => {
         backgroundColor: color,
         filter: active
             ? "opacity(1) grayscale(0)"
-            : "opacity(0.1) grayscale(0.9)",
+            : `opacity(${gray.toFixed(2)}) grayscale(${(1 - gray).toFixed(2)})`,
         color: color,
         clipPath: ss.clipPath,
         WebkitClipPath: ss.clipPath,

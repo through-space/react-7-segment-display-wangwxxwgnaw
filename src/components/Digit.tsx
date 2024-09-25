@@ -10,6 +10,7 @@ type DigitType = {
     color: string;
     height: number;
     skew: boolean;
+    gray: number;
 };
 
 export const Digit = ({
@@ -17,6 +18,7 @@ export const Digit = ({
     color = "red",
     height = 250,
     skew = false,
+    gray = 0.1,
 }: DigitType) => {
     const style = {
         height: `${height}px`,
@@ -46,6 +48,7 @@ export const Digit = ({
                         color={color}
                         id={letter}
                         skew={skew}
+                        gray={gray}
                     />
                 );
             })}
