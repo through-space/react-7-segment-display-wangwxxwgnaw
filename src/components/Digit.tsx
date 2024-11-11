@@ -35,7 +35,7 @@ export const Digit = ({
     );
 
     useEffect(() => {
-        setActiveArray(char ? charMap[char] : charMap["-"]);
+        setActiveArray(char  && charMap[char] ? charMap[char] : charMap["-"]);
     }, [char]);
 
     return (
