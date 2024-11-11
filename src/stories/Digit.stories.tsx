@@ -50,7 +50,7 @@ export const WithCharMap: Story = {
     args: {
         color: "red",
         height: 250,
-        char: "_",
+        char: "~",
         skew: false,
         charMap: {"_": [0,0,0,1,0,0,0], ...CharToDigit}
     },
