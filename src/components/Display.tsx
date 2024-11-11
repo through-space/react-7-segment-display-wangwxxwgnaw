@@ -2,13 +2,13 @@ import { Digit } from "./Digit";
 import React, { useEffect, useState } from "react";
 
 type DisplayType = {
-    count: number;
-    height: number;
-    value: any;
-    color: string;
+    count?: number;
+    height?: number;
+    value?: any;
+    color?: string;
     backgroundColor?: string;
-    skew: boolean;
-    gray: number;
+    skew?: boolean;
+    gray?: number;
 };
 
 export const Display = ({
