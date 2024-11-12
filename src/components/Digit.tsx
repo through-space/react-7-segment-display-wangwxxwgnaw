@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import charToDigit, { ICharToDigit } from "../utils/charToDigit";
 
 const letters = ["A", "B", "C", "D", "E", "F", "G"] as const;
+const defaultChar = " ";
 
 type DigitType = {
     char?: string;
@@ -15,7 +16,7 @@ type DigitType = {
 };
 
 export const Digit = ({
-    char = "-",
+    char = defaultChar,
     color = "red",
     height = 250,
     skew = false,
@@ -31,11 +32,11 @@ export const Digit = ({
     } as React.CSSProperties;
 
     const [activeArray, setActiveArray] = useState(
-        char && charMap[char] ? charMap[char] : charMap["-"],
+        char && charMap[char] ? charMap[char] : charMap[defaultChar],
     );
 
     useEffect(() => {
-        setActiveArray(char  && charMap[char] ? charMap[char] : charMap["-"]);
+        setActiveArray(char  && charMap[char] ? charMap[char] : charMap[defaultChar]);
     }, [char]);
 
     return (

@@ -50,8 +50,17 @@ export const WithCharMap: Story = {
     args: {
         color: "red",
         height: 250,
-        char: "~",
+        char: "_",
         skew: false,
         charMap: {"_": [0,0,0,1,0,0,0], ...CharToDigit}
+    },
+};
+
+export const DefaultChar: Story = {
+    args: {
+        color: "red",
+        height: 250,
+        char: "invalid-char",
+        skew: false,
     },
 };
